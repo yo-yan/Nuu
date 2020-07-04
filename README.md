@@ -1,2 +1,7 @@
 # Nuu
 reactやってまーす
+
+
+## author
+
+hashimoto
