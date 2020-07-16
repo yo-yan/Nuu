@@ -15,7 +15,7 @@ class Header extends Component {
         <div>
           <input onChange={this.onInputChangeHandler} placeholder='text' />
         </div>
-        <p>{this.state.font}</p>
+        <h1>{this.state.font}</h1>
       </div>
     );
   }
