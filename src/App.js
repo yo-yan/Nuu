@@ -1,34 +1,24 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 
-import './App.css';
+class Header extends Component {
 
-function App() {
-  const [count, setCount] = useState("yo-yan");
+  state = { font: '' };
 
-  const increment = () => {
-    setCount(count + "yo-yan");
-
+  onInputChangeHandler = (event) => {
+    this.setState({ font: event.target.value });
   }
 
+  render() {
+    return (
+      <div style={{ textAlign: 'left' }}>
 
-  return (
-    <div>
-      <button onClick={increment}>add</button>
-
-
-
-      {count}
-
-
-
-    </div>
-  )
-
-
-
-
-
-
+        <div>
+          <input onChange={this.onInputChangeHandler} placeholder='text' />
+        </div>
+        <p>{this.state.font}</p>
+      </div>
+    );
+  }
 }
 
-export default App
+export default Header;
