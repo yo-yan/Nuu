@@ -1,24 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './App.css';
+import Card from './Card';
 
-class Header extends Component {
+const sampleArray = [
+  { id: 1, name: 'aaa', date: 19920527 },
+  { id: 2, name: 'bbb', date: 19920528 },
+  { id: 3, name: 'ccc', date: 19920529 },
+  { id: 4, name: 'ddd', date: 19920530 },
+  { id: 5, name: 'eee', date: 19920501 }
+];
 
-  state = { font: '' };
+function App() {
 
-  onInputChangeHandler = (event) => {
-    this.setState({ font: event.target.value });
-  }
+  return (
+    <div>
+      {sampleArray.map((data, index) => {
+        return (
+          <Card key={index} id={data.id} name={data.name} date={data.date} />
+        )
+      })}
+    </div>
+  )
 
-  render() {
-    return (
-      <div style={{ textAlign: 'left' }}>
-
-        <div>
-          <input onChange={this.onInputChangeHandler} placeholder='text' />
-        </div>
-        <h1>{this.state.font}</h1>
-      </div>
-    );
-  }
 }
 
-export default Header;
+export default App
