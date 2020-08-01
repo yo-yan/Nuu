@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom'
 import { Table } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 
+const sampleArray = [
+    { id: 1, name: 'aaa', date: 19921109, age: '-' },
+    { id: 2, name: 'bbb', date: 19921110, age: '-' },
+    { id: 3, name: 'ccc', date: 19921111, age: '-' },
+    { id: 4, name: 'ddd', date: 19921112, age: '-' },
+    { id: 5, name: 'eee', date: 19921113, age: '-' },
+]
+
 const ComponentA = () => {
 
     return (
@@ -30,31 +38,25 @@ const ComponentA = () => {
             <Table striped bordered hover>
                 <thead>
                     <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>date</th>
                         <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td colSpan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
+                {sampleArray.map((data, index) => {
+                    return (
+                        <tbody key={index}>
+                            <tr>
+                                <td>{data.id}</td>
+                                <td>{data.name}</td>
+                                <td>{data.date}</td>
+                                <td>{data.age}</td>
+                            </tr>
+                        </tbody>
+                    );
+                })}
+
             </Table>
         </>
     );
